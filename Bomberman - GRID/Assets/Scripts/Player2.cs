@@ -37,7 +37,7 @@ public class Player2 : MonoBehaviour {
 		}	
 		
 		
-		if (Input.GetKeyDown ("[0]") && bombCount < bombLevel) {
+		if (Input.GetKeyDown ("right shift") && bombCount < bombLevel) {
 			
 			Vector3 positionBomb = new Vector3 (Mathf.Round (transform.position.x), 1, Mathf.Round (transform.position.z));
 			if (pierceState == false){
@@ -46,7 +46,7 @@ public class Player2 : MonoBehaviour {
 			else {
 				Instantiate (pierceBomb, positionBomb, Quaternion.identity); 
 			}
-			bombCount++;
+            bombCount++;
 		}
 		
 		

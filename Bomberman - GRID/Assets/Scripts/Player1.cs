@@ -21,23 +21,23 @@ public class Player1 : MonoBehaviour {
 	}
 	
 	void Update () {
-		
-		if (Input.GetKey ("w")) {
-			GetComponent<Rigidbody>().MovePosition (transform.position + Vector3.forward * moveSpeed * Time.deltaTime);
-			//transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);	
-		} else if (Input.GetKey ("s")) {
-			GetComponent<Rigidbody>().MovePosition (transform.position - Vector3.forward * moveSpeed * Time.deltaTime);
-			//transform.Translate(Vector3.back * moveSpeed * Time.deltaTime);
-		} else if (Input.GetKey ("d")) {
-			GetComponent<Rigidbody>().MovePosition (transform.position + Vector3.right * moveSpeed * Time.deltaTime);
-			//transform.position += transform.right * moveSpeed * Time.deltaTime;
-		} else if (Input.GetKey ("a")) {
-			GetComponent<Rigidbody>().MovePosition (transform.position - Vector3.right * moveSpeed * Time.deltaTime);
-			//transform.position -= transform.right * moveSpeed * Time.deltaTime;
-		}	
-		
-		
-		if (Input.GetKeyDown ("space") && bombCount < bombLevel) {
+
+        float moveHorizontal = Input.GetAxisRaw("Horizontal");
+        float moveVertical = Input.GetAxisRaw("Vertical");
+
+        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+
+
+
+        if (moveHorizontal != 0 || moveVertical != 0)
+        {
+            transform.rotation = Quaternion.LookRotation(movement);
+        }
+
+        transform.Translate(movement * moveSpeed * Time.deltaTime, Space.World);
+
+        /*
+        if (Input.GetKeyDown ("space") && bombCount < bombLevel) {
 			
 			Vector3 positionBomb = new Vector3 (Mathf.Round (transform.position.x), 1, Mathf.Round (transform.position.z));
 			if (pierceState == false){
@@ -48,6 +48,7 @@ public class Player1 : MonoBehaviour {
 			}
 			bombCount++;
 		}
+        */
 		
 		
 		
