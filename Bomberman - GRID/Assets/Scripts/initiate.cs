@@ -8,7 +8,7 @@ public class initiate : MonoBehaviour {
 	public GameObject box;
 
 	void Start () {
-	
+	    /*
 		int counterZ = 0;
 		string line;
 
@@ -32,6 +32,7 @@ public class initiate : MonoBehaviour {
 		}
 		
 		file.Close();
+        */
 	}
 
 	void Update () {
