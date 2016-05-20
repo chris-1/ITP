@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class BoxScript : MonoBehaviour {
-	private float rand = Random.Range(0F, 100F);
+	private float rand;
 	private Vector3 currentPosition;
 	public GameObject FireUp;
 	public GameObject FireUp2;
@@ -17,10 +17,16 @@ public class BoxScript : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		currentPosition = transform.position + new Vector3(0f,0.5f,0f);
+        
 
 
-	}
+    }
 
+    void Start()
+    {
+        rand = (Random.Range(0F, 100F));
+
+    }
 
 
 	public void spawnItem() {
