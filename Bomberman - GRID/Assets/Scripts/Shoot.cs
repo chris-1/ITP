@@ -3,10 +3,10 @@ using System.Collections;
 
 public class Shoot : MonoBehaviour
 {
-
+    public string key;
     public Rigidbody bullet;
 
-    public float speed = 20;
+    public float speed = 40;
 
 
 
@@ -20,7 +20,7 @@ public class Shoot : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown(key))
         {
             Rigidbody instantiatedProjectile = Instantiate(bullet,
                                                            transform.position,

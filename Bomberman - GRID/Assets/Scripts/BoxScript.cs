@@ -32,15 +32,15 @@ public class BoxScript : MonoBehaviour {
 	public void spawnItem() {
 		if (rand < 15F) {
 			
-			Instantiate(FireUp, currentPosition, Quaternion.identity);
-			Instantiate(FireUp2, currentPosition, Quaternion.identity);
+			//Instantiate(FireUp, currentPosition, Quaternion.identity);
+			//Instantiate(FireUp2, currentPosition, Quaternion.identity);
 			
 			
 		}
 		else if (rand >= 15F && rand < 35F) {
 			
-			Instantiate(BombUp, currentPosition, Quaternion.identity);
-			Instantiate(BombUp2, currentPosition, Quaternion.identity);
+			//Instantiate(BombUp, currentPosition, Quaternion.identity);
+			//Instantiate(BombUp2, currentPosition, Quaternion.identity);
 			
 			
 		}
@@ -54,8 +54,8 @@ public class BoxScript : MonoBehaviour {
 		}
 		else if (rand >= 45F && rand < 50F) {
 			
-			Instantiate(Pierce, currentPosition, Quaternion.identity);
-			Instantiate(Pierce2, currentPosition, Quaternion.identity);
+			//Instantiate(Pierce, currentPosition, Quaternion.identity);
+			//Instantiate(Pierce2, currentPosition, Quaternion.identity);
 			
 			
 		}
